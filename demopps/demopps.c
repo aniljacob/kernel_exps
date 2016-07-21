@@ -101,11 +101,11 @@ static int dps_init(void)
 		goto errout_cc;
 	}
 	/*create the device node in /dev folder using udev.
-	 *[root@compute dps]# ls -al /dev/dpslk0 
+	 *[root@compute dps]# ls -al /dev/dpsctl0 
 	 *crw-------. 1 root root 247, 0 Jul 20 09:32 /dev/dpslk0
 	 * */
 	dps_device.device = device_create(dps_device.devclass, NULL, 
-			dps_device.dps_devno, NULL, "dpslk%d", i);
+			dps_device.dps_devno, NULL, "dpsctl%d", i);
 	if (!dps_device.device){
 		printk(KERN_INFO"Creating dps device node failed\n");
 		ret = -3;
