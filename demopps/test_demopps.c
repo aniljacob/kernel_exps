@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
 	int fd = 0, ret = 0;
 	off_t offset = 32;
 	char buf[SIZE] = {0};
-	fd = open("/dev/dps0", O_RDWR);
+	fd = open("/dev/dpsctl0", O_RDWR);
 	if (fd < 0){
-		perror("Opening /dev/dps");
+		perror("Opening /dev/dpsctl");
 		return -1;
 	}
 

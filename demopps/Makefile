@@ -13,3 +13,6 @@ clean:
 	rm -f *.o
 	rm -f Module.* 
 	rm -f *.mod.c
+	rm -rf .demopps*
+	rm -rf .tmp_versions 
+	rm -f modules.order
