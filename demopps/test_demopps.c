@@ -3,6 +3,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <poll.h>
 
 #define SIZE 32
 int main(int argc, char *argv[])
@@ -20,10 +21,12 @@ int main(int argc, char *argv[])
 	if(ret < 0){
 		perror("Read error");
 	}
+#if 0
 	ret = pread(fd, buf, SIZE, offset);
 	if(ret < 0){
 		perror("Read error");
 	}
+#endif
 	close(fd);
 
 	return 0;
