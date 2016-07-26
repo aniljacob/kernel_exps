@@ -95,7 +95,7 @@ static void pps_timer_event(unsigned long argp)
 	/*enable the printk below. it will print this at 2s intervals*/
 	printk(KERN_INFO"experiment with timers\n", jiffies);
 	/* reactivate the timer so that it will continue running */
-	mod_timer(&dps_device.pps_timer, jiffies + 5 * HZ);
+	mod_timer(&dps_device.pps_timer, jiffies + 1 * HZ);
 	/*wakes up the poll thread waiting on the waitqueue*/
 	dps_device.flag = 1;
 	wake_up_interruptible(&dps_device.waitq);
