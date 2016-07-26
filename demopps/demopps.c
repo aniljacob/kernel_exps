@@ -50,11 +50,16 @@ ssize_t dps_read(struct file *fp, char __user *buf, size_t sz, loff_t *offset)
 {
 	size_t size = 0;
 	struct dps_dev *dpd = fp->private_data;
+	char timeout_buf[4] = {0};
+	int *timeout_p = (int *)timeout_buf;
 
-	printk(KERN_INFO"dps_read offset=%d, size=%d, %s\n", *offset, sz, dpd->name);
+	copy_from_user(timeout_buf, buf, 4);
+
+	printk(KERN_INFO"dps_read offset=%d, size=%d, %s, timeout = %d\n", *offset, sz, dpd->name, *timeout_p);
 
 	dpd->flag = 0;
 	printk(KERN_INFO"blocking read\n");
+	mod_timer(&dps_device.pps_timer, jiffies + *timeout_p * HZ);
 	wait_event_interruptible(dps_device.waitq, dpd->flag);
 	printk(KERN_INFO"unblocked read\n");
 
@@ -93,7 +98,7 @@ struct file_operations dps_ops = {
 static void pps_timer_event(unsigned long argp)
 {
 	/*enable the printk below. it will print this at 2s intervals*/
-	printk(KERN_INFO"experiment with timers\n", jiffies);
+	printk(KERN_INFO"experiment with timers\n");
 	/* reactivate the timer so that it will continue running */
 	mod_timer(&dps_device.pps_timer, jiffies + 1 * HZ);
 	/*wakes up the poll thread waiting on the waitqueue*/

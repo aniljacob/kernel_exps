@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
 	off_t offset = 32;
 	char buf[SIZE] = {0};
 	int i = 0;
+	int *timeout_p = (int *)buf;
+	*timeout_p = 5;
 
 	fd = open("/dev/dpsctl0", O_RDWR);
 	if (fd < 0){
