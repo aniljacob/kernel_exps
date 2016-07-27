@@ -39,16 +39,25 @@ ssize_t pgwalk_write(struct file *fp, const char __user *buf, size_t sz, loff_t 
 ssize_t pgwalk_read(struct file *fp, char __user *buf, size_t sz, loff_t *offset)
 {
 	size_t size = 0;
+	/*get the current process memory. process represented by task_struct
+	 * memory map represented by task_struct->mm_struct(mm)
+	 * mm_struct have a field vm_area_struct(mmap) which is a linked list of
+	 * memory areas*/
 	struct mm_struct *cur_mm = current->mm;
 	struct vm_area_struct *vmnxt = NULL;
-	printk(KERN_INFO"pgwalk_read offset=%d, size=%d\n", *offset, sz);
+
+	printk(KERN_INFO"pgwalk_read offset=%d, size=%d, processid=%d\n", *offset, sz, current->pid);
 	
 	if (cur_mm){
 		vmnxt = cur_mm->mmap;
+		/* iterate through different memory areas of the process*/
 		while(vmnxt){
 			printk(KERN_INFO"0x%lx - 0x%lx, size=%dK, pages=%d\n", vmnxt->vm_start, vmnxt->vm_end,
 					(vmnxt->vm_end - vmnxt->vm_start) / 1024, 
 					(vmnxt->vm_end - vmnxt->vm_start) / PAGE_SIZE);
+			/*file assosicated with the memory area, if not an anonymous mapping
+			 * anonymous mapping used for stack,vdso etc
+			 * */
 			if (vmnxt->vm_file)
 				printk(KERN_INFO"File= %s\n",	vmnxt->vm_file->f_path.dentry->d_iname);
 			vmnxt = vmnxt->vm_next;
