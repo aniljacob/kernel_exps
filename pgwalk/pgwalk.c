@@ -4,6 +4,10 @@
 #include<linux/types.h>
 #include<linux/device.h>
 #include<linux/cdev.h>
+#include<linux/mm_types.h>
+#include<linux/sched.h>
+#include<linux/mount.h>
+#include<asm/current.h>
 
 #define PGWLK_NAME "pgwalk"
 #define PGWLK_CLASS_NAME "pgwalkc"
@@ -35,7 +39,22 @@ ssize_t pgwalk_write(struct file *fp, const char __user *buf, size_t sz, loff_t 
 ssize_t pgwalk_read(struct file *fp, char __user *buf, size_t sz, loff_t *offset)
 {
 	size_t size = 0;
+	struct mm_struct *cur_mm = current->mm;
+	struct vm_area_struct *vmnxt = NULL;
 	printk(KERN_INFO"pgwalk_read offset=%d, size=%d\n", *offset, sz);
+	
+	if (cur_mm){
+		vmnxt = cur_mm->mmap;
+		while(vmnxt){
+			printk(KERN_INFO"0x%lx - 0x%lx, size=%dK, pages=%d\n", vmnxt->vm_start, vmnxt->vm_end,
+					(vmnxt->vm_end - vmnxt->vm_start) / 1024, 
+					(vmnxt->vm_end - vmnxt->vm_start) / PAGE_SIZE);
+			if (vmnxt->vm_file)
+				printk(KERN_INFO"File= %s\n",	vmnxt->vm_file->f_path.dentry->d_iname);
+			vmnxt = vmnxt->vm_next;
+		}
+	}
+
 	return size;
 }
 

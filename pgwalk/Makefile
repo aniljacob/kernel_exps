@@ -13,3 +13,6 @@ clean:
 	rm -f *.o
 	rm -f Module.* 
 	rm -f *.mod.c
+	rm -rf .tmp_versions
+	rm -f .pgwalk*
+	rm -f modules.order

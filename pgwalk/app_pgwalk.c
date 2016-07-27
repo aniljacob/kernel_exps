@@ -20,11 +20,19 @@ int main(int argc, char *argv[])
 	if(ret < 0){
 		perror("Read error");
 	}
+	//if offset want to be specified.
+#if 0
 	ret = pread(fd, buf, SIZE, offset);
 	if(ret < 0){
 		perror("Read error");
 	}
+#endif
 	close(fd);
+
+	/*need a while loop to inspect 'cat /proc/<pid>/map' file
+	 * to see our app and map are showing the same memory maps
+	 * */
+	while(1);
 
 	return 0;
 }
