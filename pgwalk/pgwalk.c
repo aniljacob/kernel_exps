@@ -21,10 +21,63 @@ struct pgwalk_dev{
 };
 
 struct pgwalk_dev pgwalk_device;
+unsigned long fpage_addr[10];
+
+static struct page* walk_page_table(unsigned long long vaddr)
+{
+#if 0
+	void *page_addr = NULL;
+	char hello_str[32] = "Hello World";
+	pgd_t *pgd = NULL;
+	pud_t *pud = NULL;
+	pmd_t *pmd = NULL;
+	pte_t *ptep = NULL, pte = {0};
+#endif
+	struct mm_struct *mm = current->mm;
+	pgd_t *pgd = mm->pgd;
+	struct page *page = NULL;
+	unsigned long pdpe_index = 0;
+
+	pdpe_index = (vaddr & (0x1ffUL << 39)) >> 39;
+	printk(KERN_INFO"pdpe_index = 0x%lx\n", pdpe_index);
+	pdpe_entry = pgd[pdpe_index];
+	printk(KERN_INFO"pgd = 0x%llx, pgd_entry = 0x%llx\n", pgd, __va(pgd[pdpe_index]));
+	
+
+#if 0
+	pgd = pgd_offset(mm, addr);
+	if(pgd_none(*pgd) || pgd_bad(*pgd))
+		goto out;
+	printk(KERN_INFO"pgd = %lx\n", pgd);
+
+	pgd = pgd_offset(mm, addr);
+	if(pgd_none(*pgd) || pgd_bad(*pgd))
+		goto out;
+	printk(KERN_INFO"pgd = %lx\n", pgd);
+
+	pgd = pgd_offset(mm, addr);
+	if(pgd_none(*pgd) || pgd_bad(*pgd))
+		goto out;
+	printk(KERN_INFO"pgd = %lx\n", pgd);
+#endif
+
+	return 0;
+
+out_err:
+	return page;
+}
 
 int pgwalk_open(struct inode *inode, struct file *fp)
 {
+	int i = 0;
+
 	printk(KERN_INFO"pgwalk_open\n");
+#if 0
+	for (i = 0; i < 10; i++){
+		fpage_addr[i] = get_zeroed_page(GFP_KERNEL);
+		printk(KERN_INFO"start_address :0x%lx, 0x%lx\n", fpage_addr[i], __pa(fpage_addr[i]));
+	}
+#endif
 	return 0;
 }
 
@@ -45,21 +98,26 @@ ssize_t pgwalk_read(struct file *fp, char __user *buf, size_t sz, loff_t *offset
 	 * memory areas*/
 	struct mm_struct *cur_mm = current->mm;
 	struct vm_area_struct *vmnxt = NULL;
+	unsigned long vaddr = 0;
 
 	printk(KERN_INFO"pgwalk_read offset=%d, size=%d, processid=%d\n", *offset, sz, current->pid);
+
+	printk(KERN_INFO"page global directory = 0x%lx\n",cur_mm->pgd);
 	
 	if (cur_mm){
 		vmnxt = cur_mm->mmap;
-		/* iterate through different memory areas of the process*/
+		/* iterate through different virtual memory areas of the process*/
 		while(vmnxt){
 			printk(KERN_INFO"0x%lx - 0x%lx, size=%dK, pages=%d\n", vmnxt->vm_start, vmnxt->vm_end,
 					(vmnxt->vm_end - vmnxt->vm_start) / 1024, 
 					(vmnxt->vm_end - vmnxt->vm_start) / PAGE_SIZE);
 			/*file assosicated with the memory area, if not an anonymous mapping
-			 * anonymous mapping used for stack,vdso etc
+			 * anonymous mapping used for stack,vdso etc anonymous mapping -> if 
+			 * a file is not mapped
 			 * */
 			if (vmnxt->vm_file)
 				printk(KERN_INFO"File= %s\n",	vmnxt->vm_file->f_path.dentry->d_iname);
+			walk_page_table(vmnxt->vm_start);
 			vmnxt = vmnxt->vm_next;
 		}
 	}
@@ -69,8 +127,15 @@ ssize_t pgwalk_read(struct file *fp, char __user *buf, size_t sz, loff_t *offset
 
 int pgwalk_release(struct inode *inode, struct file *fp)
 {
+	int i = 0;
+
 	printk(KERN_INFO"pgwalk_release\n");
-	return 0;
+#if 0
+	for (i = 0; i < 10; i++)
+		if (fpage_addr[i])
+				free_page(fpage_addr[i]);
+#endif
+		return 0;
 }
 
 /*assosciated file operations with the device*/
