@@ -1,0 +1,3 @@
+if somebody wants a bare minimum thing to start with pci drivers, this is the point
+this is based on the i350 device. if someother device want to be used, update the 
+device id table with apt vendor id/device id
