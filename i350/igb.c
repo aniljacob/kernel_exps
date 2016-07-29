@@ -1,6 +1,8 @@
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/pci.h>
+#include <linux/netdevice.h>
+#include <linux/etherdevice.h>
 #include "i350.h"
 
 MODULE_LICENSE("Dual BSD/GPL");
@@ -19,7 +21,7 @@ struct pci_device_id igb_pci_tbl[] = {
 void igb_set_intr_capability(struct net_device *netdev)
 {
 	int err = 0;
-	struct msix_entry msix_entries[MAX_MSIX_ENTRIES] = 
+	struct msix_entry msix_entries[MAX_MSIX_ENTRIES] = {0,0};  
 
 	err = pci_enable_msix_range(netdev, msix_entries){
 		return;
@@ -53,10 +55,73 @@ int igb_release_irq(int devno)
 }
 #endif
 
+static int igb_open(struct net_device *netdev)
+{
+	printk(KERN_INFO"igb open call\n");
+	return 0;
+}
+
+static int igb_close(struct net_device *netdev)
+{
+	printk(KERN_INFO"igb close call\n");
+	return 0;
+}
+
+static int igb_ioctl(struct net_device *netdev, struct ifreq *ifr, int cmd)
+{
+	printk(KERN_INFO"igb ioctl call\n");
+	return 0;
+}
+
+static netdev_tx_t igb_xmit_frame(struct sk_buff *skb, struct net_device *netdev)
+{
+	printk(KERN_INFO"igb xmit body call\n");
+	return 0;
+}
+
+struct net_device_ops igb_netdev_ops = {
+	.ndo_open = igb_open,
+	.ndo_stop = igb_close,
+	/*without this it is causing a kernel crash. comment it out you will get a kernel
+	 * crash*/
+	.ndo_start_xmit = igb_xmit_frame,
+	.ndo_do_ioctl = igb_ioctl
+};
+
 static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 {
+	int err = 0;
+	struct net_device *netdev = NULL;
+	struct i350_dev *adapter = NULL;
     printk(KERN_INFO"registering device=%x, vendor=%x pci device\n", ent->device, ent->vendor);
+	
+	netdev = alloc_etherdev_mq(sizeof(struct i350_dev), IGB_MAX_TX_QUEUES);
+	if (!netdev){
+		printk(KERN_ERR"Allocating netdev failed\n");
+		err = -1;
+		goto errout_alloc_etherdev;
+	}
+
+	SET_NETDEV_DEV(netdev, &pdev->dev);
+
+	pci_set_drvdata(pdev, netdev);
+	adapter = netdev_priv(netdev);
+	adapter->netdev = netdev;
+	adapter->pdev = pdev;
+	netdev->netdev_ops = &igb_netdev_ops;
+
+	strcpy(netdev->name, "eth%d");
+	err = register_netdev(netdev);
+	if (err){
+		printk(KERN_ERR"registering netdevice failed\n");
+		goto errout_register;
+	}
+
 	return 0;
+errout_register:
+	free_netdev(netdev);
+errout_alloc_etherdev:
+	return err;
 }
 
 static void igb_remove(struct pci_dev *pdev)
