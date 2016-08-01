@@ -73,18 +73,27 @@ static int igb_ioctl(struct net_device *netdev, struct ifreq *ifr, int cmd)
 	return 0;
 }
 
+/* without this function in netdev ops, kernel will Oops. Refer the kernel panic
+ * log vmcore-dmesg01.txt for details!!!*/
 static netdev_tx_t igb_xmit_frame(struct sk_buff *skb, struct net_device *netdev)
 {
 	printk(KERN_INFO"igb xmit body call\n");
 	return 0;
 }
 
+/* without this function in netdev ops, kernel will Oops. Refer the kernel panic
+ * log vmcore-dmesg02.txt for details!!!*/
+static struct rtnl_link_stats64 *igb_get_stats64(struct net_device *netdev,
+			                        struct rtnl_link_stats64 *stats)
+{
+	return 0;
+}
+
 struct net_device_ops igb_netdev_ops = {
 	.ndo_open = igb_open,
 	.ndo_stop = igb_close,
-	/*without this it is causing a kernel crash. comment it out you will get a kernel
-	 * crash*/
 	.ndo_start_xmit = igb_xmit_frame,
+	.ndo_get_stats64 = igb_get_stats64,
 	.ndo_do_ioctl = igb_ioctl
 };
 

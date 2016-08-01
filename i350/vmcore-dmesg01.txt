@@ -1,0 +1,50 @@
+[152214.347969] igb v0.1
+[152214.375144] registering device=1521, vendor=8086 pci device
+[152214.443235] registering device=1521, vendor=8086 pci device
+[152214.524590] systemd-udevd[18473]: renamed network interface eth0 to enp11s0f0
+[152214.524997] registering device=1521, vendor=8086 pci device
+[152214.525374] registering device=1521, vendor=8086 pci device
+[152214.761595] systemd-udevd[18475]: renamed network interface eth0 to enp11s0f1
+[152214.863386] systemd-udevd[18476]: renamed network interface eth1 to enp11s0f2
+[152214.956222] systemd-udevd[18478]: renamed network interface eth2 to enp11s0f3
+[152214.961602] igb ioctl call
+[152214.961604] igb ioctl call
+[152214.967035] igb open call
+[152215.031247] igb ioctl call
+[152215.031249] igb ioctl call
+[152215.035696] igb open call
+[152215.041849] igb ioctl call
+[152215.041850] igb ioctl call
+[152215.046078] igb open call
+[152215.126843] BUG: unable to handle kernel NULL pointer dereference at           (null)
+[152215.126844] IP: [<          (null)>]           (null)
+[152215.126846] PGD 0 
+[152215.126848] Oops: 0010 [#1] SMP 
+[152215.126879] Modules linked in: igb(OF) pgwalk(OF) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul glue_helper i7core_edac ipmi_si lpc_ich ablk_helper ioatdma cryptd
+[152215.126896]  pcspkr i2c_i801 mfd_core edac_core ipmi_msghandler shpchp acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd uinput sunrpc xfs libcrc32c sd_mod ata_generic i2c_algo_bit ixgbe crc_t10dif i2c_core pata_acpi mdio crct10dif_common mptsas e1000e dca scsi_transport_sas ata_piix mptscsih ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[152215.126899] CPU: 5 PID: 0 Comm: swapper/5 Tainted: GF          O--------------   3.10.0-123.el7.x86_64 #1
+[152215.126900] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[152215.126901] task: ffff88032edbdb00 ti: ffff88032ede0000 task.ti: ffff88032ede0000
+[152215.126903] RIP: 0010:[<0000000000000000>]  [<          (null)>]           (null)
+[152215.126904] RSP: 0018:ffff880333ca3ba0  EFLAGS: 00010292
+[152215.126905] RAX: ffffffffa035d120 RBX: 000000000000005a RCX: ffffffff819ea770
+[152215.126906] RDX: ffff88061dae96c0 RSI: ffff8802f490c000 RDI: ffff880627f17a00
+[152215.126906] RBP: ffff880333ca3bf0 R08: 00000000000006c0 R09: ffff88061dae9000
+[152215.126907] R10: 000000000000ffff R11: ffffffff814efe60 R12: ffff8802f490c000
+[152215.126908] R13: 0000000000004000 R14: ffff880620197a9c R15: ffff880627f17a00
+[152215.126909] FS:  0000000000000000(0000) GS:ffff880333ca0000(0000) knlGS:0000000000000000
+[152215.126911] CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b
+[152215.126911] CR2: 0000000000000000 CR3: 000000032d1ad000 CR4: 00000000000007e0
+[152215.126912] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[152215.126913] DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400
+[152215.126913] Stack:
+[152215.126917]  ffffffff814d1b58 ffff88032ca59c90 ffffffffa035d120 ffff8802f4908000
+[152215.126920]  ffff880627f17a00 ffff880620197a00 ffff8802f4908000 ffff8802f490c000
+[152215.126922]  ffff880620197a9c ffff880627f17a00 ffff880333ca3c30 ffffffff814f0d7e
+[152215.126923] Call Trace:
+[152215.126924]  <IRQ> 
+[152215.126930]  [<ffffffff814d1b58>] ? dev_hard_start_xmit+0x318/0x570
+[152215.126935]  [<ffffffff814f0d7e>] sch_direct_xmit+0xee/0x1c0
+[152215.126937]  [<ffffffff814d1fa8>] dev_queue_xmit+0x1f8/0x4a0
+[152215.126940]  [<ffffffff814d998b>] neigh_resolve_output+0x11b/0x220
+[152215.126943]  [<ffffffff81578b39>] ip6_finish_output2+0x159/0x480
