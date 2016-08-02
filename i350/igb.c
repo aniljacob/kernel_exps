@@ -86,15 +86,15 @@ static netdev_tx_t igb_xmit_frame(struct sk_buff *skb, struct net_device *netdev
 static struct rtnl_link_stats64 *igb_get_stats64(struct net_device *netdev,
 			                        struct rtnl_link_stats64 *stats)
 {
-	return 0;
+	return NULL;
 }
 
-struct net_device_ops igb_netdev_ops = {
+static const struct net_device_ops igb_netdev_ops = {
 	.ndo_open = igb_open,
 	.ndo_stop = igb_close,
 	.ndo_start_xmit = igb_xmit_frame,
 	.ndo_get_stats64 = igb_get_stats64,
-	.ndo_do_ioctl = igb_ioctl
+	.ndo_do_ioctl = igb_ioctl,
 };
 
 static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
@@ -135,7 +135,10 @@ errout_alloc_etherdev:
 
 static void igb_remove(struct pci_dev *pdev)
 {
+	struct net_device *netdev = pci_get_drvdata(pdev);
     printk(KERN_INFO"removing pci device\n");
+	unregister_netdev(netdev);
+	free_netdev(netdev);
 	return;
 }
 

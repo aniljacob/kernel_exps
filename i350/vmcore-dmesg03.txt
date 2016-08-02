@@ -1,0 +1,110 @@
+[18001.223069] igb: module verification failed: signature and/or required key missing - tainting kernel
+[18001.337084] igb v0.1
+[18001.363154] registering device=1521, vendor=8086 pci device
+[18001.430155] registering device=1521, vendor=8086 pci device
+[18001.514931] systemd-udevd[20164]: renamed network interface eth0 to enp11s0f0
+[18001.515328] registering device=1521, vendor=8086 pci device
+[18001.515789] registering device=1521, vendor=8086 pci device
+[18001.742861] systemd-udevd[20166]: renamed network interface eth0 to enp11s0f1
+[18001.840747] systemd-udevd[20167]: renamed network interface eth1 to enp11s0f2
+[18001.938581] systemd-udevd[20169]: renamed network interface eth2 to enp11s0f3
+[18001.940643] igb ioctl call
+[18001.940645] igb ioctl call
+[18001.945417] igb open call
+[18001.994304] igb ioctl call
+[18001.994305] igb ioctl call
+[18001.998442] igb open call
+[18002.004404] igb ioctl call
+[18002.004405] igb ioctl call
+[18002.008509] igb open call
+[18002.089191] igb xmit body call
+[18002.268081] igb xmit body call
+[18002.389318] igb ioctl call
+[18002.421611] igb ioctl call
+[18002.454507] igb xmit body call
+[18002.458572] igb open call
+[18002.961100] igb xmit body call
+[18003.262337] igb xmit body call
+[18003.298741] igb xmit body call
+[18003.561207] igb xmit body call
+[18007.356279] igb xmit body call
+[18010.340127] igb xmit body call
+[18011.344619] igb xmit body call
+[18024.088652] igb close call
+[18036.031883] igb open call
+[18036.119443] igb xmit body call
+[18036.164494] igb xmit body call
+[18036.210047] igb xmit body call
+[18036.280416] igb xmit body call
+[18037.281846] igb xmit body call
+[18037.318301] igb xmit body call
+[18038.279246] igb xmit body call
+[18039.426621] igb xmit body call
+[18041.323331] igb xmit body call
+[18043.626842] igb xmit body call
+[18045.320572] igb xmit body call
+[18057.926204] igb xmit body call
+[18073.075183] igb xmit body call
+[18086.105966] igb close call
+[66794.495406] perf samples too long (2693 > 2500), lowering kernel.perf_event_max_sample_rate to 50000
+[264202.498587] exiting
+[264202.524680] removing pci device
+[264202.563229] removing pci device
+[264202.601878] removing pci device
+[264202.640406] removing pci device
+[264206.134049] igb v0.1
+[264206.161179] registering device=1521, vendor=8086 pci device
+[264206.229209] registering device=1521, vendor=8086 pci device
+[264206.243896] igb ioctl call
+[264206.243897] igb ioctl call
+[264206.249301] igb open call
+[264206.308656] igb xmit body call
+[264206.327218] BUG: unable to handle kernel paging request at ffffffffa07692c8
+[264206.327227] IP: [<ffffffff814ca60c>] dev_get_phys_port_id+0xc/0x30
+[264206.327229] PGD 18d1067 PUD 18d2063 PMD 32b3fc067 PTE 0
+[264206.327231] Oops: 0000 [#1] SMP 
+[264206.327264] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel iTCO_wdt aesni_intel lrw iTCO_vendor_support gf128mul ipmi_si glue_helper i7core_edac ablk_helper lpc_ich cryptd pcspkr i2c_i801
+[264206.327280]  ioatdma mfd_core edac_core ipmi_msghandler shpchp acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd uinput sunrpc xfs libcrc32c ixgbe sd_mod ata_generic mptsas i2c_algo_bit mdio i2c_core pata_acpi crc_t10dif crct10dif_common scsi_transport_sas e1000e dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[264206.327284] CPU: 20 PID: 24853 Comm: dhclient Tainted: GF          O--------------   3.10.0-123.el7.x86_64 #1
+[264206.327285] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[264206.327286] task: ffff8802d5ce6660 ti: ffff8802d8c1e000 task.ti: ffff8802d8c1e000
+[264206.327290] RIP: 0010:[<ffffffff814ca60c>]  [<ffffffff814ca60c>] dev_get_phys_port_id+0xc/0x30
+[264206.327291] RSP: 0018:ffff8802d8c1f828  EFLAGS: 00010246
+[264206.327292] RAX: ffffffffa0769120 RBX: ffff880620c77000 RCX: 0000000000000000
+[264206.327292] RDX: 0000000000000006 RSI: ffff8802d8c1f8b0 RDI: ffff880620c77000
+[264206.327293] RBP: ffff8802d8c1f9d0 R08: 0000000000000588 R09: ffff88062bf99942
+[264206.327294] R10: ffff880333803300 R11: ffffea001884a780 R12: ffff88062129f200
+[264206.327295] R13: 00000000579f0a8b R14: ffff88062bf99888 R15: 0000000000000000
+[264206.327297] FS:  00007fa625e80840(0000) GS:ffff88063fd00000(0000) knlGS:0000000000000000
+[264206.327297] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[264206.327298] CR2: ffffffffa07692c8 CR3: 000000061982e000 CR4: 00000000000007e0
+[264206.327299] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[264206.327300] DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400
+[264206.327301] Stack:
+[264206.327304]  ffffffff814df40e 0000000000000000 ffff880600006115 000003e801000280
+[264206.327307]  00000000000005dc 0000000800000000 ffff880600000008 0000000000000001
+[264206.327310]  000280da00000000 ffffea00184add00 ffff88063ffd6e80 00000000e556c3c3
+[264206.327310] Call Trace:
+[264206.327315]  [<ffffffff814df40e>] ? rtnl_fill_ifinfo+0x3fe/0xc20
+[264206.327318]  [<ffffffff814dff5e>] rtnl_dump_ifinfo+0x14e/0x230
+[264206.327324]  [<ffffffff811978e8>] ? __kmalloc_node_track_caller+0x58/0x270
+[264206.327326]  [<ffffffff814c0acd>] ? __alloc_skb+0x5d/0x2d0
+[264206.327328]  [<ffffffff814c0afd>] ? __alloc_skb+0x8d/0x2d0
+[264206.327330]  [<ffffffff814c02e1>] ? __kmalloc_reserve.isra.25+0x31/0x90
+[264206.327332]  [<ffffffff814c0acd>] ? __alloc_skb+0x5d/0x2d0
+[264206.327334]  [<ffffffff814c0b11>] ? __alloc_skb+0xa1/0x2d0
+[264206.327338]  [<ffffffff814fb5ae>] netlink_dump+0x7e/0x230
+[264206.327340]  [<ffffffff814fba80>] netlink_recvmsg+0x320/0x3e0
+[264206.327345]  [<ffffffff814b807f>] sock_recvmsg+0xbf/0x100
+[264206.327348]  [<ffffffff814fd7d4>] ? netlink_sendmsg+0x154/0x760
+[264206.327353]  [<ffffffff81254675>] ? sock_has_perm+0x75/0x90
+[264206.327356]  [<ffffffff814b6782>] ? move_addr_to_user+0xb2/0xd0
+[264206.327358]  [<ffffffff814b838e>] ___sys_recvmsg+0x11e/0x2b0
+[264206.327361]  [<ffffffff814b7f21>] ? SYSC_sendto+0x121/0x1c0
+[264206.327364]  [<ffffffff814b8f41>] __sys_recvmsg+0x51/0x90
+[264206.327366]  [<ffffffff814b8f92>] SyS_recvmsg+0x12/0x20
+[264206.327370]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[264206.327386] Code: 83 e1 02 74 0b 55 40 0f b6 f6 48 89 e5 ff d2 5d f3 c3 b8 a1 ff ff ff c3 0f 1f 80 00 00 00 00 66 66 66 66 90 48 8b 87 98 01 00 00 <48> 8b 80 a8 01 00 00 48 85 c0 74 08 55 48 89 e5 ff d0 5d c3 b8 
+[264206.327388] RIP  [<ffffffff814ca60c>] dev_get_phys_port_id+0xc/0x30
+[264206.327389]  RSP <ffff8802d8c1f828>
+[264206.327389] CR2: ffffffffa07692c8
