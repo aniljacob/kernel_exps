@@ -104,6 +104,10 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	struct i350_dev *adapter = NULL;
     printk(KERN_INFO"registering device=%x, vendor=%x pci device\n", ent->device, ent->vendor);
 	
+	/*creates a complex heirarchy of netdev, link it to pci device and use our own i350_dev
+	 * structure to store pcidevice, and netdev and use it from rest of the netdev ops
+	 * this function allocates the net_device object with our i350_dev as private member
+	 * */
 	netdev = alloc_etherdev_mq(sizeof(struct i350_dev), IGB_MAX_TX_QUEUES);
 	if (!netdev){
 		printk(KERN_ERR"Allocating netdev failed\n");
@@ -111,14 +115,22 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 		goto errout_alloc_etherdev;
 	}
 
+	/*set the netdevs pci device field with the pdev from probe
+	 * Probe invoked automatically upon driver registration and assosciated
+	 * pci device will come along with it*/
 	SET_NETDEV_DEV(netdev, &pdev->dev);
 
+	/*set pci structures device data as netdev*/
 	pci_set_drvdata(pdev, netdev);
+	/*fill our i350_dev with information of pci device and net_devices.
+	 * we can retrieve it later using container_of macro */
 	adapter = netdev_priv(netdev);
 	adapter->netdev = netdev;
 	adapter->pdev = pdev;
 	netdev->netdev_ops = &igb_netdev_ops;
 
+	/*Now eth interfaces will be available for udev to play with
+	 * it will be renamed by udev if the rule is set to rename it*/
 	strcpy(netdev->name, "eth%d");
 	err = register_netdev(netdev);
 	if (err){
@@ -137,7 +149,12 @@ static void igb_remove(struct pci_dev *pdev)
 {
 	struct net_device *netdev = pci_get_drvdata(pdev);
     printk(KERN_INFO"removing pci device\n");
+	/*when free was called vmcore-dmesg03.txt happened. It was a BUG_ON inside the 
+	 * function since I am not satisfying the BUG_ON(dev->reg_state != NETREG_UNREGISTERED);
+	 * condition*/
 	unregister_netdev(netdev);
+	/*refer vmcore-dmesg02.txt. crash happened when this freeing of netdev was not done.
+	 * or i assume so*/
 	free_netdev(netdev);
 	return;
 }
