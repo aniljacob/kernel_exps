@@ -149,7 +149,7 @@ static void igb_remove(struct pci_dev *pdev)
 {
 	struct net_device *netdev = pci_get_drvdata(pdev);
     printk(KERN_INFO"removing pci device\n");
-	/*when free was called vmcore-dmesg03.txt happened. It was a BUG_ON inside the 
+	/*when free was called vmcore-dmesg04.txt happened. It was a BUG_ON inside the 
 	 * function since I am not satisfying the BUG_ON(dev->reg_state != NETREG_UNREGISTERED);
 	 * condition*/
 	unregister_netdev(netdev);
