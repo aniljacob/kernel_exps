@@ -102,6 +102,8 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	int err = 0, pci_using_dac = 0;
 	struct net_device *netdev = NULL;
 	struct i350_dev *adapter = NULL;
+	struct e1000_hw *hw =NULL;
+
     printk(KERN_INFO"registering device=%x, vendor=%x pci device\n", ent->device, ent->vendor);
 
 	/* wake up the device*/
@@ -162,8 +164,18 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	adapter = netdev_priv(netdev);
 	adapter->netdev = netdev;
 	adapter->pdev = pdev;
+	hw = &adapter->hw;
 	netdev->netdev_ops = &igb_netdev_ops;
 
+	/* param2 bar no = 0
+	 * param3 length = 0 => entire bar memory needs to map
+	 * returns _iomem pointer, can use function ioread/iowrite functions to access the 
+	 * device registers*/
+	hw->hw_addr = pci_iomap(pdev, 0, 0);
+	if (!hw->hw_addr){
+		printk(KERN_ERR"Mapping PCI memory region failed\n");
+		goto errout_iomap;
+	}
 	/*Now eth interfaces will be available for udev to play with
 	 * it will be renamed by udev if the rule is set to rename it*/
 	strcpy(netdev->name, "eth%d");
@@ -176,6 +188,8 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	return 0;
 
 errout_register:
+	pci_iounmap(pdev, hw->hw_addr);
+errout_iomap:
 	free_netdev(netdev);
 errout_alloc_etherdev:
 	pci_release_selected_regions(pdev, pci_select_bars(pdev, IORESOURCE_MEM));
@@ -189,11 +203,16 @@ errout_dma:
 static void igb_remove(struct pci_dev *pdev)
 {
 	struct net_device *netdev = pci_get_drvdata(pdev);
+	struct i350_dev *adapter = netdev_priv(netdev);
+	struct e1000_hw *hw = &adapter->hw;
+
     printk(KERN_INFO"removing pci device\n");
 	/*when free was called vmcore-dmesg04.txt happened. It was a BUG_ON inside the 
 	 * function since I am not satisfying the BUG_ON(dev->reg_state != NETREG_UNREGISTERED);
 	 * condition*/
 	unregister_netdev(netdev);
+	/*need to unmap the memory we mapped using pci_iomap call*/
+	pci_iounmap(pdev, hw->hw_addr);
 	/*refer vmcore-dmesg02.txt. crash happened when this freeing of netdev was not done.
 	 * or i assume so*/
 	free_netdev(netdev);
