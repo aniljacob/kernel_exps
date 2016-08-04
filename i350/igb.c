@@ -99,11 +99,46 @@ static const struct net_device_ops igb_netdev_ops = {
 
 static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 {
-	int err = 0;
+	int err = 0, pci_using_dac = 0;
 	struct net_device *netdev = NULL;
 	struct i350_dev *adapter = NULL;
     printk(KERN_INFO"registering device=%x, vendor=%x pci device\n", ent->device, ent->vendor);
-	
+
+	/* wake up the device*/
+	err = pci_enable_device_mem(pdev);
+	if (err)
+		return err;
+
+	pci_using_dac = 0;
+	/*check if the device is capable for 64 bit dma transactions
+	 * dma_set_mask_and_coherent = dma_set_mask - for streaming dma +
+	 * dma_set_coherent_mask - for coherent dma*/
+	err = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(64));
+	if (!err) {
+		pci_using_dac = 1;
+	} else {
+		/*check if the device is capable for 32 bit dma transactions*/
+		err = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+		if (err) {
+			dev_err(&pdev->dev,
+					"No usable DMA configuration, aborting\n");
+			goto errout_dma;
+		}
+	}
+
+	/* pci request the iomem region from the BAR0*/
+	err = pci_request_selected_regions(pdev, pci_select_bars(pdev, IORESOURCE_MEM), 
+					igb_name);
+	if (err)
+		goto errout_pcireg;
+
+	/*enables pci configuration space command registers Bit2-Bus Master
+	 * this enables the DMA from the device*/
+	pci_set_master(pdev);
+
+	/*save the pcie configuration space of the device before suspending*/
+	pci_save_state(pdev);
+
 	/*creates a complex heirarchy of netdev, link it to pci device and use our own i350_dev
 	 * structure to store pcidevice, and netdev and use it from rest of the netdev ops
 	 * this function allocates the net_device object with our i350_dev as private member
@@ -139,9 +174,15 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	}
 
 	return 0;
+
 errout_register:
 	free_netdev(netdev);
 errout_alloc_etherdev:
+	pci_release_selected_regions(pdev, pci_select_bars(pdev, IORESOURCE_MEM));
+errout_pcireg:
+errout_dma:
+	pci_disable_device(pdev);
+
 	return err;
 }
 
@@ -156,6 +197,8 @@ static void igb_remove(struct pci_dev *pdev)
 	/*refer vmcore-dmesg02.txt. crash happened when this freeing of netdev was not done.
 	 * or i assume so*/
 	free_netdev(netdev);
+	pci_release_selected_regions(pdev, pci_select_bars(pdev, IORESOURCE_MEM));
+	pci_disable_device(pdev);
 	return;
 }
 
