@@ -16,22 +16,64 @@ struct pci_device_id igb_pci_tbl[] = {
 	{ PCI_VDEVICE(INTEL, E1000_DEV_ID_I350_SGMII) }
 };
 
-#if 0
 /*enables the msi/msix based interrupts for the i350*/
-void igb_set_intr_capability(struct net_device *netdev)
+int igb_set_intr_capability(struct net_device *netdev)
 {
-	int err = 0;
-	struct msix_entry msix_entries[MAX_MSIX_ENTRIES] = {0,0};  
+	int err = 0, i = 0;
+	struct i350_dev *adapter = NULL;
+	int num_vectors = MAX_MSIX_ENTRIES;
 
-	err = pci_enable_msix_range(netdev, msix_entries){
-		return;
+	adapter = netdev_priv(netdev);
+	if (!adapter || !adapter->pdev){
+		printk(KERN_ERR"No adapter registered in the netdev\n");
+		return -1;
 	}
 
-	err = pci_enable_msi_range(maxvec, maxvec){
-		return;
+	memset(adapter->msix_entries, 0, sizeof(adapter->msix_entries));
+	for (i = 0; i < num_vectors; i++)
+		adapter->msix_entries[i].entry = i;
+
+	err = pci_enable_msix(adapter->pdev, adapter->msix_entries, 
+			num_vectors);
+	if (err == 0){
+		adapter->flag |= FLG_MSIX_ENABLED;
+		for (i = 0; i < adapter->num_vectors; i++)
+			printk(KERN_INFO"irq vector = %d\n", adapter->msix_entries[i].vector);
+		return 0;
 	}
+
+#if 0
+	err = pci_enable_msi(adapter->pdev);
+	if (err > 0){
+		adapter->flag |= FLG_MSI_ENABLED;
+		return 2;
+	}
+#endif
+
+	return 0;
 }
 
+int igb_reset_intr_capability(struct net_device *netdev)
+{
+	struct i350_dev *adapter = netdev_priv(netdev);
+
+	if (!adapter || !adapter->pdev){
+		printk(KERN_ERR"Something is wrong, shouldnt see this. No igb interrupt reset!!!\n");
+	}
+
+	if (adapter->flag & FLG_MSIX_ENABLED){
+		printk(KERN_INFO"disabling pci msix\n");
+		pci_disable_msix(adapter->pdev);
+	}
+#if 0
+	else if (adapter->flag & FLG_MSI_ENABLED)
+		pci_disable_msi(adapter->pdev);
+#endif
+
+	return 0;
+}
+
+#if 0
 int igb_request_irq(int devno)
 {
 	err = request_irq(pdev->irq, igb_intr, IRQF_SHARED,
@@ -45,7 +87,7 @@ int igb_request_irq(int devno)
 
 int igb_release_irq(int devno)
 {
-	err = request_irq(pdev->irq, igb_intr, IRQF_SHARED,
+	err = release_irq(pdev->irq, igb_intr, IRQF_SHARED,
 		netdev->name, adapter);
 	if (err){
 		printk(KERN_ERR"Failed to initialize interrupt");
@@ -58,12 +100,14 @@ int igb_release_irq(int devno)
 static int igb_open(struct net_device *netdev)
 {
 	printk(KERN_INFO"igb open call\n");
+
 	return 0;
 }
 
 static int igb_close(struct net_device *netdev)
 {
 	printk(KERN_INFO"igb close call\n");
+
 	return 0;
 }
 
@@ -176,6 +220,12 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 		printk(KERN_ERR"Mapping PCI memory region failed\n");
 		goto errout_iomap;
 	}
+
+	igb_set_intr_capability(netdev);
+	if (err < 0){
+		goto errout_intr;
+	}
+
 	/*Now eth interfaces will be available for udev to play with
 	 * it will be renamed by udev if the rule is set to rename it*/
 	strcpy(netdev->name, "eth%d");
@@ -188,6 +238,7 @@ static int igb_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	return 0;
 
 errout_register:
+errout_intr:
 	pci_iounmap(pdev, hw->hw_addr);
 errout_iomap:
 	free_netdev(netdev);
@@ -211,6 +262,7 @@ static void igb_remove(struct pci_dev *pdev)
 	 * function since I am not satisfying the BUG_ON(dev->reg_state != NETREG_UNREGISTERED);
 	 * condition*/
 	unregister_netdev(netdev);
+	igb_reset_intr_capability(netdev);
 	/*need to unmap the memory we mapped using pci_iomap call*/
 	pci_iounmap(pdev, hw->hw_addr);
 	/*refer vmcore-dmesg02.txt. crash happened when this freeing of netdev was not done.

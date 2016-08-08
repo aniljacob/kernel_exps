@@ -1,0 +1,629 @@
+[  333.198712] igb v0.1
+[  333.224838] registering device=1521, vendor=8086 pci device
+[  333.291787] igb 0000:0b:00.0: irq 107 for MSI/MSI-X
+[  333.291801] igb 0000:0b:00.0: irq 108 for MSI/MSI-X
+[  333.291814] igb 0000:0b:00.0: irq 109 for MSI/MSI-X
+[  333.291831] igb 0000:0b:00.0: irq 110 for MSI/MSI-X
+[  333.291842] igb 0000:0b:00.0: irq 111 for MSI/MSI-X
+[  333.291854] igb 0000:0b:00.0: irq 112 for MSI/MSI-X
+[  333.291866] igb 0000:0b:00.0: irq 113 for MSI/MSI-X
+[  333.291877] igb 0000:0b:00.0: irq 114 for MSI/MSI-X
+[  333.291908] err = 0
+[  333.317470] registering device=1521, vendor=8086 pci device
+[  333.384397] igb 0000:0b:00.1: irq 115 for MSI/MSI-X
+[  333.384411] igb 0000:0b:00.1: irq 166 for MSI/MSI-X
+[  333.384422] igb 0000:0b:00.1: irq 167 for MSI/MSI-X
+[  333.384434] igb 0000:0b:00.1: irq 168 for MSI/MSI-X
+[  333.384445] igb 0000:0b:00.1: irq 169 for MSI/MSI-X
+[  333.384457] igb 0000:0b:00.1: irq 170 for MSI/MSI-X
+[  333.384473] igb 0000:0b:00.1: irq 171 for MSI/MSI-X
+[  333.384484] igb 0000:0b:00.1: irq 172 for MSI/MSI-X
+[  333.384513] err = 0
+[  333.417677] systemd-udevd[6826]: renamed network interface eth0 to enp11s0f0
+[  333.417957] registering device=1521, vendor=8086 pci device
+[  333.418215] igb 0000:0b:00.2: irq 173 for MSI/MSI-X
+[  333.418227] igb 0000:0b:00.2: irq 174 for MSI/MSI-X
+[  333.418243] igb 0000:0b:00.2: irq 175 for MSI/MSI-X
+[  333.418253] igb 0000:0b:00.2: irq 176 for MSI/MSI-X
+[  333.418264] igb 0000:0b:00.2: irq 177 for MSI/MSI-X
+[  333.418277] igb 0000:0b:00.2: irq 178 for MSI/MSI-X
+[  333.418287] igb 0000:0b:00.2: irq 179 for MSI/MSI-X
+[  333.418298] igb 0000:0b:00.2: irq 180 for MSI/MSI-X
+[  333.418345] err = 0
+[  333.418714] registering device=1521, vendor=8086 pci device
+[  333.419016] igb 0000:0b:00.3: irq 181 for MSI/MSI-X
+[  333.419029] igb 0000:0b:00.3: irq 182 for MSI/MSI-X
+[  333.419042] igb 0000:0b:00.3: irq 183 for MSI/MSI-X
+[  333.419054] igb 0000:0b:00.3: irq 184 for MSI/MSI-X
+[  333.419071] igb 0000:0b:00.3: irq 185 for MSI/MSI-X
+[  333.419083] igb 0000:0b:00.3: irq 186 for MSI/MSI-X
+[  333.419096] igb 0000:0b:00.3: irq 187 for MSI/MSI-X
+[  333.419108] igb 0000:0b:00.3: irq 188 for MSI/MSI-X
+[  333.419140] err = 0
+[  333.696720] systemd-udevd[6828]: renamed network interface eth0 to enp11s0f1
+[  333.790586] systemd-udevd[6829]: renamed network interface eth1 to enp11s0f2
+[  333.884331] systemd-udevd[6831]: renamed network interface eth2 to enp11s0f3
+[  333.888257] igb ioctl call
+[  333.888259] igb ioctl call
+[  333.892925] igb open call
+[  334.072503] igb ioctl call
+[  334.104760] igb ioctl call
+[  334.141249] igb open call
+[  334.178236] igb ioctl call
+[  334.210490] igb ioctl call
+[  334.246791] igb open call
+[  334.283758] igb ioctl call
+[  334.316011] igb ioctl call
+[  334.352236] igb open call
+[  334.482714] igb xmit body call
+[  334.543246] igb xmit body call
+[  334.796594] igb xmit body call
+[  334.950478] igb xmit body call
+[  335.798042] igb xmit body call
+[  335.834501] igb xmit body call
+[  336.075850] igb xmit body call
+[  338.469664] igb xmit body call
+[  339.602694] igb xmit body call
+[  343.269639] exiting
+[  343.294681] removing pci device
+[  343.332249] igb close call
+[  343.384662] disabling pci msix
+[  343.421400] removing pci device
+[  343.458975] igb close call
+[  343.513533] disabling pci msix
+[  343.550254] removing pci device
+[  343.587781] igb close call
+[  343.596939] igb xmit body call
+[  343.675832] disabling pci msix
+[  343.712512] removing pci device
+[  343.749969] igb close call
+[  343.803329] disabling pci msix
+[  350.550548] igb v0.1
+[  350.576631] registering device=1521, vendor=8086 pci device
+[  350.643510] igb 0000:0b:00.0: irq 107 for MSI/MSI-X
+[  350.643524] igb 0000:0b:00.0: irq 108 for MSI/MSI-X
+[  350.643536] igb 0000:0b:00.0: irq 109 for MSI/MSI-X
+[  350.643547] igb 0000:0b:00.0: irq 110 for MSI/MSI-X
+[  350.643558] igb 0000:0b:00.0: irq 111 for MSI/MSI-X
+[  350.643570] igb 0000:0b:00.0: irq 112 for MSI/MSI-X
+[  350.643582] igb 0000:0b:00.0: irq 113 for MSI/MSI-X
+[  350.643593] igb 0000:0b:00.0: irq 114 for MSI/MSI-X
+[  350.643624] err = 0
+[  350.668970] registering device=1521, vendor=8086 pci device
+[  350.735773] igb 0000:0b:00.1: irq 115 for MSI/MSI-X
+[  350.735785] igb 0000:0b:00.1: irq 166 for MSI/MSI-X
+[  350.735796] igb 0000:0b:00.1: irq 167 for MSI/MSI-X
+[  350.735806] igb 0000:0b:00.1: irq 168 for MSI/MSI-X
+[  350.735817] igb 0000:0b:00.1: irq 169 for MSI/MSI-X
+[  350.735828] igb 0000:0b:00.1: irq 170 for MSI/MSI-X
+[  350.735839] igb 0000:0b:00.1: irq 171 for MSI/MSI-X
+[  350.735850] igb 0000:0b:00.1: irq 172 for MSI/MSI-X
+[  350.735878] err = 0
+[  350.772551] systemd-udevd[6967]: renamed network interface eth0 to enp11s0f0
+[  350.772966] registering device=1521, vendor=8086 pci device
+[  350.773289] igb 0000:0b:00.2: irq 173 for MSI/MSI-X
+[  350.773303] igb 0000:0b:00.2: irq 174 for MSI/MSI-X
+[  350.773315] igb 0000:0b:00.2: irq 175 for MSI/MSI-X
+[  350.773328] igb 0000:0b:00.2: irq 176 for MSI/MSI-X
+[  350.773340] igb 0000:0b:00.2: irq 177 for MSI/MSI-X
+[  350.773353] igb 0000:0b:00.2: irq 178 for MSI/MSI-X
+[  350.773365] igb 0000:0b:00.2: irq 179 for MSI/MSI-X
+[  350.773377] igb 0000:0b:00.2: irq 180 for MSI/MSI-X
+[  350.773411] err = 0
+[  350.773791] registering device=1521, vendor=8086 pci device
+[  350.774103] igb 0000:0b:00.3: irq 181 for MSI/MSI-X
+[  350.774116] igb 0000:0b:00.3: irq 182 for MSI/MSI-X
+[  350.774128] igb 0000:0b:00.3: irq 183 for MSI/MSI-X
+[  350.774141] igb 0000:0b:00.3: irq 184 for MSI/MSI-X
+[  350.774153] igb 0000:0b:00.3: irq 185 for MSI/MSI-X
+[  350.774166] igb 0000:0b:00.3: irq 186 for MSI/MSI-X
+[  350.774179] igb 0000:0b:00.3: irq 187 for MSI/MSI-X
+[  350.774191] igb 0000:0b:00.3: irq 188 for MSI/MSI-X
+[  350.774225] err = 0
+[  351.052484] systemd-udevd[6969]: renamed network interface eth0 to enp11s0f1
+[  351.155400] systemd-udevd[6971]: renamed network interface eth1 to enp11s0f2
+[  351.249237] systemd-udevd[6972]: renamed network interface eth2 to enp11s0f3
+[  351.251530] igb ioctl call
+[  351.251532] igb ioctl call
+[  351.256372] igb open call
+[  351.264181] igb ioctl call
+[  351.264182] igb ioctl call
+[  351.268489] igb open call
+[  351.274258] igb ioctl call
+[  351.274259] igb ioctl call
+[  351.278465] igb open call
+[  351.335780] igb xmit body call
+[  351.352829] igb xmit body call
+[  351.698448] igb ioctl call
+[  351.730769] igb ioctl call
+[  351.767526] igb open call
+[  351.768961] igb xmit body call
+[  352.306289] igb xmit body call
+[  353.307716] igb xmit body call
+[  353.344119] igb xmit body call
+[  353.679469] igb xmit body call
+[  356.807681] igb xmit body call
+[  357.589209] igb xmit body call
+[  359.602420] exiting
+[  359.627414] removing pci device
+[  359.664865] igb close call
+[  359.716413] disabling pci msix
+[  359.753263] removing pci device
+[  359.790893] igb close call
+[  359.846872] disabling pci msix
+[  359.883572] removing pci device
+[  359.921030] igb close call
+[  359.978254] disabling pci msix
+[  360.015003] removing pci device
+[  360.052466] igb close call
+[  360.101669] disabling pci msix
+[  492.321194] igb v0.1
+[  492.347250] registering device=1521, vendor=8086 pci device
+[  492.414167] igb 0000:0b:00.0: irq 107 for MSI/MSI-X
+[  492.414180] igb 0000:0b:00.0: irq 108 for MSI/MSI-X
+[  492.414191] igb 0000:0b:00.0: irq 109 for MSI/MSI-X
+[  492.414203] igb 0000:0b:00.0: irq 110 for MSI/MSI-X
+[  492.414214] igb 0000:0b:00.0: irq 111 for MSI/MSI-X
+[  492.414226] igb 0000:0b:00.0: irq 112 for MSI/MSI-X
+[  492.414237] igb 0000:0b:00.0: irq 113 for MSI/MSI-X
+[  492.414249] igb 0000:0b:00.0: irq 114 for MSI/MSI-X
+[  492.414279] err = 0
+[  492.439800] registering device=1521, vendor=8086 pci device
+[  492.506646] igb 0000:0b:00.1: irq 115 for MSI/MSI-X
+[  492.506660] igb 0000:0b:00.1: irq 166 for MSI/MSI-X
+[  492.506671] igb 0000:0b:00.1: irq 167 for MSI/MSI-X
+[  492.506681] igb 0000:0b:00.1: irq 168 for MSI/MSI-X
+[  492.506692] igb 0000:0b:00.1: irq 169 for MSI/MSI-X
+[  492.506702] igb 0000:0b:00.1: irq 170 for MSI/MSI-X
+[  492.506714] igb 0000:0b:00.1: irq 171 for MSI/MSI-X
+[  492.506725] igb 0000:0b:00.1: irq 172 for MSI/MSI-X
+[  492.506754] err = 0
+[  492.545292] systemd-udevd[7934]: renamed network interface eth0 to enp11s0f0
+[  492.545649] registering device=1521, vendor=8086 pci device
+[  492.545936] igb 0000:0b:00.2: irq 173 for MSI/MSI-X
+[  492.545950] igb 0000:0b:00.2: irq 174 for MSI/MSI-X
+[  492.545963] igb 0000:0b:00.2: irq 175 for MSI/MSI-X
+[  492.545975] igb 0000:0b:00.2: irq 176 for MSI/MSI-X
+[  492.545989] igb 0000:0b:00.2: irq 177 for MSI/MSI-X
+[  492.546002] igb 0000:0b:00.2: irq 178 for MSI/MSI-X
+[  492.546014] igb 0000:0b:00.2: irq 179 for MSI/MSI-X
+[  492.546028] igb 0000:0b:00.2: irq 180 for MSI/MSI-X
+[  492.546058] err = 0
+[  492.546422] registering device=1521, vendor=8086 pci device
+[  492.546728] igb 0000:0b:00.3: irq 181 for MSI/MSI-X
+[  492.546742] igb 0000:0b:00.3: irq 182 for MSI/MSI-X
+[  492.546754] igb 0000:0b:00.3: irq 183 for MSI/MSI-X
+[  492.546766] igb 0000:0b:00.3: irq 184 for MSI/MSI-X
+[  492.546778] igb 0000:0b:00.3: irq 185 for MSI/MSI-X
+[  492.546790] igb 0000:0b:00.3: irq 186 for MSI/MSI-X
+[  492.546804] igb 0000:0b:00.3: irq 187 for MSI/MSI-X
+[  492.546816] igb 0000:0b:00.3: irq 188 for MSI/MSI-X
+[  492.546846] err = 0
+[  492.825169] systemd-udevd[7936]: renamed network interface eth0 to enp11s0f1
+[  492.930992] systemd-udevd[7937]: renamed network interface eth1 to enp11s0f2
+[  493.019820] systemd-udevd[7939]: renamed network interface eth2 to enp11s0f3
+[  493.027457] igb ioctl call
+[  493.027459] igb ioctl call
+[  493.032468] igb open call
+[  493.040470] igb ioctl call
+[  493.040471] igb ioctl call
+[  493.044748] igb open call
+[  493.050989] igb ioctl call
+[  493.050990] igb ioctl call
+[  493.055269] igb open call
+[  493.117512] igb xmit body call
+[  493.434897] igb xmit body call
+[  493.435733] igb ioctl call
+[  493.435735] igb ioctl call
+[  493.440647] igb open call
+[  493.502284] igb xmit body call
+[  493.675221] igb xmit body call
+[  494.504706] igb xmit body call
+[  494.541108] igb xmit body call
+[  495.452067] igb xmit body call
+[  496.785961] igb xmit body call
+[  498.480004] igb xmit body call
+[  500.116738] exiting
+[  500.141782] removing pci device
+[  500.179288] igb close call
+[  500.233209] removing pci device
+[  500.270722] igb close call
+[  500.322072] removing pci device
+[  500.359573] igb close call
+[  500.418108] removing pci device
+[  500.455617] igb close call
+[  507.238605] igb v0.1
+[  507.264640] registering device=1521, vendor=8086 pci device
+[  507.331347] ------------[ cut here ]------------
+[  507.386459] WARNING: at drivers/pci/msi.c:1010 pci_enable_msix+0x3d6/0x3f0()
+[  507.470727] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  508.317080]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  508.709425] CPU: 13 PID: 8081 Comm: insmod Tainted: GF          O--------------   3.10.0-123.el7.x86_64 #1
+[  508.824871] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  508.974619]  0000000000000000 00000000f9b10adf ffff88032cc71ab0 ffffffff815e19ba
+[  509.063260]  ffff88032cc71ae8 ffffffff8105dee1 ffff88032e3188d8 ffff88032e318910
+[  509.151913]  0000000000000008 0000000000000000 ffff88032e422000 ffff88032cc71af8
+[  509.240381] Call Trace:
+[  509.269506]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  509.330851]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  509.402600]  [<ffffffff8105e00a>] warn_slowpath_null+0x1a/0x20
+[  509.472270]  [<ffffffff81304ef6>] pci_enable_msix+0x3d6/0x3f0
+[  509.540899]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  509.623034]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  509.691658]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  509.758206]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  509.827869]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  509.897534]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  509.969277]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  510.035826]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  510.104463]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  510.172046]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  510.236510]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  510.304095]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  510.370648]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  510.443489]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  510.513200]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  510.578746]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  510.646377]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  510.712961]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  510.783709]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  510.865883]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  510.933466]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  511.005201] ---[ end trace f090f8e11290577e ]---
+[  511.060380] igb 0000:0b:00.0: irq 189 for MSI/MSI-X
+[  511.060392] igb 0000:0b:00.0: irq 190 for MSI/MSI-X
+[  511.060403] igb 0000:0b:00.0: irq 191 for MSI/MSI-X
+[  511.060415] igb 0000:0b:00.0: irq 192 for MSI/MSI-X
+[  511.060425] igb 0000:0b:00.0: irq 193 for MSI/MSI-X
+[  511.060436] igb 0000:0b:00.0: irq 194 for MSI/MSI-X
+[  511.060447] igb 0000:0b:00.0: irq 195 for MSI/MSI-X
+[  511.060457] igb 0000:0b:00.0: irq 196 for MSI/MSI-X
+[  511.060470] igb 0000:0b:00.0: irq 197 for MSI/MSI-X
+[  511.060480] igb 0000:0b:00.0: irq 198 for MSI/MSI-X
+[  511.060490] igb 0000:0b:00.0: irq 199 for MSI/MSI-X
+[  511.060500] igb 0000:0b:00.0: irq 200 for MSI/MSI-X
+[  511.060510] igb 0000:0b:00.0: irq 201 for MSI/MSI-X
+[  511.060520] igb 0000:0b:00.0: irq 202 for MSI/MSI-X
+[  511.060531] igb 0000:0b:00.0: irq 203 for MSI/MSI-X
+[  511.060542] igb 0000:0b:00.0: irq 204 for MSI/MSI-X
+[  511.060573] ------------[ cut here ]------------
+[  511.115704] WARNING: at fs/sysfs/dir.c:526 sysfs_add_one+0xa5/0xd0()
+[  511.191613] sysfs: cannot create duplicate filename '/devices/pci0000:00/0000:00:06.0/0000:08:00.0/0000:09:02.0/0000:0b:00.0/msi_irqs'
+[  511.336150] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  512.182316]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  512.574673] CPU: 1 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  512.689080] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  512.838828]  ffff88032cc71918 00000000f9b10adf ffff88032cc718d0 ffffffff815e19ba
+[  512.927507]  ffff88032cc71908 ffffffff8105dee1 00000000ffffffef ffff8802e849eaf0
+[  513.016186]  ffff88032cc719b8 ffff8800add2e000 0000000000000000 ffff88032cc71970
+[  513.104874] Call Trace:
+[  513.134051]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  513.195455]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  513.267250]  [<ffffffff8105df5c>] warn_slowpath_fmt+0x5c/0x80
+[  513.335926]  [<ffffffff81226cd5>] sysfs_add_one+0xa5/0xd0
+[  513.400449]  [<ffffffff81226ecc>] create_dir+0x7c/0xe0
+[  513.461850]  [<ffffffff81227279>] sysfs_create_dir+0xa9/0x130
+[  513.530525]  [<ffffffff812baf6b>] kobject_add_internal+0xbb/0x2f0
+[  513.603353]  [<ffffffff812bb1e6>] kset_register+0x46/0x70
+[  513.667871]  [<ffffffff812bb344>] kset_create_and_add+0x64/0xa0
+[  513.738620]  [<ffffffff813038ea>] populate_msi_sysfs+0x2a/0x120
+[  513.809376]  [<ffffffff81304e3a>] pci_enable_msix+0x31a/0x3f0
+[  513.878049]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  513.960235]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  514.028907]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  514.095499]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  514.165211]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  514.234928]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  514.306724]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  514.373321]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  514.441991]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  514.509621]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  514.574134]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  514.641764]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  514.708363]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  514.781187]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  514.850899]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  514.916451]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  514.984085]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  515.050672]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  515.121424]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  515.203608]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  515.271250]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  515.343036] ---[ end trace f090f8e11290577f ]---
+[  515.398197] ------------[ cut here ]------------
+[  515.453345] WARNING: at lib/kobject.c:196 kobject_add_internal+0x1e4/0x2f0()
+[  515.537615] kobject_add_internal failed for msi_irqs with -EEXIST, don't try to register things with the same name in the same directory.
+[  515.685291] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  516.530760]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  516.922714] CPU: 1 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  517.037128] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  517.186863]  ffff88032cc719d8 00000000f9b10adf ffff88032cc71990 ffffffff815e19ba
+[  517.275545]  ffff88032cc719c8 ffffffff8105dee1 ffff8806292b9618 00000000ffffffef
+[  517.364243]  ffff88032e4220a8 ffff88032e4220a8 ffff88032e422000 ffff88032cc71a30
+[  517.452944] Call Trace:
+[  517.482132]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  517.543541]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  517.615333]  [<ffffffff8105df5c>] warn_slowpath_fmt+0x5c/0x80
+[  517.684006]  [<ffffffff81227279>] ? sysfs_create_dir+0xa9/0x130
+[  517.754763]  [<ffffffff812bb094>] kobject_add_internal+0x1e4/0x2f0
+[  517.828638]  [<ffffffff812bb1e6>] kset_register+0x46/0x70
+[  517.893172]  [<ffffffff812bb344>] kset_create_and_add+0x64/0xa0
+[  517.963928]  [<ffffffff813038ea>] populate_msi_sysfs+0x2a/0x120
+[  518.034690]  [<ffffffff81304e3a>] pci_enable_msix+0x31a/0x3f0
+[  518.103369]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  518.185566]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  518.254244]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  518.320854]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  518.390579]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  518.460300]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  518.532178]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  518.598775]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  518.667456]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  518.735099]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  518.799613]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  518.867251]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  518.933851]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  519.006686]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  519.076400]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  519.141965]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  519.209601]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  519.276204]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  519.346959]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  519.429142]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  519.496782]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  519.568587] ---[ end trace f090f8e112905780 ]---
+[  519.623828] err = 0
+[  519.649231] registering device=1521, vendor=8086 pci device
+[  519.715997] ------------[ cut here ]------------
+[  519.771112] WARNING: at drivers/pci/msi.c:1010 pci_enable_msix+0x3d6/0x3f0()
+[  519.855381] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  520.701978]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  521.094336] CPU: 0 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  521.208748] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  521.358499]  0000000000000000 00000000f9b10adf ffff88032cc71ab0 ffffffff815e19ba
+[  521.447170]  ffff88032cc71ae8 ffffffff8105dee1 ffff88032ac648d8 ffff88032ac64910
+[  521.535842]  0000000000000008 0000000000000000 ffff88032e423000 ffff88032cc71af8
+[  521.624516] Call Trace:
+[  521.653692]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  521.715104]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  521.786876]  [<ffffffff8105e00a>] warn_slowpath_null+0x1a/0x20
+[  521.856568]  [<ffffffff81304ef6>] pci_enable_msix+0x3d6/0x3f0
+[  521.925224]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  522.007393]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  522.076052]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  522.142632]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  522.212328]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  522.282020]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  522.353800]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  522.420376]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  522.489048]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  522.556670]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  522.621179]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  522.688801]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  522.755393]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  522.828206]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  522.897905]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  522.963441]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  523.031062]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  523.097649]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  523.168383]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  523.250558]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  523.318175]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  523.389948] ---[ end trace f090f8e112905781 ]---
+[  523.445148] igb 0000:0b:00.1: irq 189 for MSI/MSI-X
+[  523.445166] igb 0000:0b:00.1: irq 190 for MSI/MSI-X
+[  523.445179] igb 0000:0b:00.1: irq 191 for MSI/MSI-X
+[  523.445193] igb 0000:0b:00.1: irq 192 for MSI/MSI-X
+[  523.445206] igb 0000:0b:00.1: irq 193 for MSI/MSI-X
+[  523.445217] igb 0000:0b:00.1: irq 194 for MSI/MSI-X
+[  523.445236] igb 0000:0b:00.1: irq 195 for MSI/MSI-X
+[  523.445249] igb 0000:0b:00.1: irq 196 for MSI/MSI-X
+[  523.445522] igb 0000:0b:00.1: irq 197 for MSI/MSI-X
+[  523.445536] igb 0000:0b:00.1: irq 198 for MSI/MSI-X
+[  523.445549] igb 0000:0b:00.1: irq 199 for MSI/MSI-X
+[  523.445562] igb 0000:0b:00.1: irq 200 for MSI/MSI-X
+[  523.445575] igb 0000:0b:00.1: irq 201 for MSI/MSI-X
+[  523.445588] igb 0000:0b:00.1: irq 202 for MSI/MSI-X
+[  523.445604] igb 0000:0b:00.1: irq 203 for MSI/MSI-X
+[  523.445618] igb 0000:0b:00.1: irq 204 for MSI/MSI-X
+[  523.445650] ------------[ cut here ]------------
+[  523.500786] WARNING: at fs/sysfs/dir.c:526 sysfs_add_one+0xa5/0xd0()
+[  523.576688] sysfs: cannot create duplicate filename '/devices/pci0000:00/0000:00:06.0/0000:08:00.0/0000:09:02.0/0000:0b:00.1/msi_irqs'
+[  523.721185] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  524.564116]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  524.954437] CPU: 12 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  525.069834] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  525.219534]  ffff88032cc71918 00000000f9b10adf ffff88032cc718d0 ffffffff815e19ba
+[  525.307956]  ffff88032cc71908 ffffffff8105dee1 00000000ffffffef ffff8800adfa18c0
+[  525.396371]  ffff88032cc719b8 ffff88032e944000 0000000000000000 ffff88032cc71970
+[  525.484789] Call Trace:
+[  525.513914]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  525.575265]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  525.647012]  [<ffffffff8105df5c>] warn_slowpath_fmt+0x5c/0x80
+[  525.715636]  [<ffffffff81226cd5>] sysfs_add_one+0xa5/0xd0
+[  525.780102]  [<ffffffff81226ecc>] create_dir+0x7c/0xe0
+[  525.841453]  [<ffffffff81227279>] sysfs_create_dir+0xa9/0x130
+[  525.910080]  [<ffffffff812baf6b>] kobject_add_internal+0xbb/0x2f0
+[  525.982859]  [<ffffffff812bb1e6>] kset_register+0x46/0x70
+[  526.047327]  [<ffffffff812bb344>] kset_create_and_add+0x64/0xa0
+[  526.118032]  [<ffffffff813038ea>] populate_msi_sysfs+0x2a/0x120
+[  526.188736]  [<ffffffff81304e3a>] pci_enable_msix+0x31a/0x3f0
+[  526.257362]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  526.339499]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  526.408125]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  526.474666]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  526.544324]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  526.613988]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  526.685727]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  526.752271]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  526.820894]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  526.888483]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  526.952949]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  527.020533]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  527.087075]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  527.159855]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  527.229518]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  527.295022]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  527.362607]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  527.429152]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  527.499856]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  527.581999]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  527.649581]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  527.721319] ---[ end trace f090f8e112905782 ]---
+[  527.776428] ------------[ cut here ]------------
+[  527.831597] WARNING: at lib/kobject.c:196 kobject_add_internal+0x1e4/0x2f0()
+[  527.915811] kobject_add_internal failed for msi_irqs with -EEXIST, don't try to register things with the same name in the same directory.
+[  528.063431] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  528.906320]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  529.296648] CPU: 12 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  529.412045] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  529.561745]  ffff88032cc719d8 00000000f9b10adf ffff88032cc71990 ffffffff815e19ba
+[  529.650166]  ffff88032cc719c8 ffffffff8105dee1 ffff8806293f7f18 00000000ffffffef
+[  529.738582]  ffff88032e4230a8 ffff88032e4230a8 ffff88032e423000 ffff88032cc71a30
+[  529.826999] Call Trace:
+[  529.856126]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  529.917475]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  529.989220]  [<ffffffff8105df5c>] warn_slowpath_fmt+0x5c/0x80
+[  530.057840]  [<ffffffff81227279>] ? sysfs_create_dir+0xa9/0x130
+[  530.128544]  [<ffffffff812bb094>] kobject_add_internal+0x1e4/0x2f0
+[  530.202369]  [<ffffffff812bb1e6>] kset_register+0x46/0x70
+[  530.266839]  [<ffffffff812bb344>] kset_create_and_add+0x64/0xa0
+[  530.337547]  [<ffffffff813038ea>] populate_msi_sysfs+0x2a/0x120
+[  530.408253]  [<ffffffff81304e3a>] pci_enable_msix+0x31a/0x3f0
+[  530.476881]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  530.559022]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  530.627648]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  530.694194]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  530.763859]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  530.833521]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  530.905262]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  530.971812]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  531.040444]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  531.108033]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  531.172504]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  531.240095]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  531.306642]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  531.379429]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  531.449093]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  531.514602]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  531.582190]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  531.648736]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  531.719443]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  531.801586]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  531.869173]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  531.940919] ---[ end trace f090f8e112905783 ]---
+[  531.996137] err = 0
+[  531.999343] systemd-udevd[8191]: renamed network interface eth0 to enp11s0f0
+[  532.010485] igb ioctl call
+[  532.010487] igb ioctl call
+[  532.016174] igb open call
+[  532.077566] igb xmit body call
+[  532.237907] registering device=1521, vendor=8086 pci device
+[  532.304595] ------------[ cut here ]------------
+[  532.330478] igb xmit body call
+[  532.396151] WARNING: at drivers/pci/msi.c:1010 pci_enable_msix+0x3d6/0x3f0()
+[  532.726195] igb xmit body call
+[  533.331871] igb xmit body call
+[  532.480419] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  533.399617]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  533.791936] CPU: 0 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  533.906339] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  534.056090]  0000000000000000 00000000f9b10adf ffff88032cc71ab0 ffffffff815e19ba
+[  534.144741]  ffff88032cc71ae8 ffffffff8105dee1 ffff88032ac618d8 ffff88032ac61910
+[  534.287232] igb xmit body call
+[  534.233400]  0000000000000008 0000000000000000 ffff88032e424000 ffff88032cc71af8
+[  534.358412] Call Trace:
+[  534.387570]  [<ffffffff815e19ba>] dump_stack+0x19/0x1b
+[  534.448959]  [<ffffffff8105dee1>] warn_slowpath_common+0x61/0x80
+[  534.520746]  [<ffffffff8105e00a>] warn_slowpath_null+0x1a/0x20
+[  534.590436]  [<ffffffff81304ef6>] pci_enable_msix+0x3d6/0x3f0
+[  534.659100]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  534.741268]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  534.809931]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  534.876506]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  534.946199]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  535.015886]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  535.087661]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  535.154244]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  535.222908]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  535.290544]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  535.355054]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  535.422683]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  535.489260]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  535.562075]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  535.631775]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  535.697319]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  535.764941]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  535.831518]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  535.902255]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  535.984427]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  536.052052]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  536.123834] ---[ end trace f090f8e112905784 ]---
+[  536.179106] igb 0000:0b:00.2: irq 189 for MSI/MSI-X
+[  536.179123] igb 0000:0b:00.2: irq 190 for MSI/MSI-X
+[  536.179319] igb 0000:0b:00.2: irq 191 for MSI/MSI-X
+[  536.179338] igb 0000:0b:00.2: irq 192 for MSI/MSI-X
+[  536.179356] igb 0000:0b:00.2: irq 193 for MSI/MSI-X
+[  536.179368] igb 0000:0b:00.2: irq 194 for MSI/MSI-X
+[  536.179383] igb 0000:0b:00.2: irq 195 for MSI/MSI-X
+[  536.179397] igb 0000:0b:00.2: irq 196 for MSI/MSI-X
+[  536.179410] igb 0000:0b:00.2: irq 197 for MSI/MSI-X
+[  536.179423] igb 0000:0b:00.2: irq 198 for MSI/MSI-X
+[  536.179437] igb 0000:0b:00.2: irq 199 for MSI/MSI-X
+[  536.179450] igb 0000:0b:00.2: irq 200 for MSI/MSI-X
+[  536.179464] igb 0000:0b:00.2: irq 201 for MSI/MSI-X
+[  536.179478] igb 0000:0b:00.2: irq 202 for MSI/MSI-X
+[  536.179491] igb 0000:0b:00.2: irq 203 for MSI/MSI-X
+[  536.179504] igb 0000:0b:00.2: irq 204 for MSI/MSI-X
+[  536.182992] igb xmit body call
+[  536.179529] BUG: unable to handle kernel paging request at ffffc900148dd00c
+[  536.299088] IP: [<ffffffff81304e05>] pci_enable_msix+0x2e5/0x3f0
+[  536.370823] PGD 333805067 PUD 63f803067 PMD 628225067 PTE 0
+[  536.437379] Oops: 0000 [#1] SMP 
+[  536.475857] Modules linked in: igb(OF+) fuse btrfs zlib_deflate raid6_pq xor vfat msdos fat ext4 mbcache jbd2 binfmt_misc ipt_MASQUERADE xt_CHECKSUM sg rpcsec_gss_krb5 nfsv4 dns_resolver nfs fscache ip6t_rpfilter ip6t_REJECT ipt_REJECT xt_conntrack ebtable_nat ebtable_broute bridge stp llc ebtable_filter ebtables ip6table_nat nf_conntrack_ipv6 nf_defrag_ipv6 nf_nat_ipv6 ip6table_mangle ip6table_security ip6table_raw ip6table_filter ip6_tables iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack iptable_mangle iptable_security iptable_raw iptable_filter ip_tables coretemp kvm_intel kvm crct10dif_pclmul crc32_pclmul crc32c_intel ghash_clmulni_intel aesni_intel iTCO_wdt lrw iTCO_vendor_support gf128mul i7core_edac glue_helper ablk_helper lpc_ich ipmi_si cryptd pcspkr i2c_i801
+[  537.318266]  mfd_core ioatdma edac_core shpchp ipmi_msghandler acpi_cpufreq mperf nfsd auth_rpcgss nfs_acl lockd sunrpc uinput xfs libcrc32c sd_mod crc_t10dif i2c_algo_bit crct10dif_common ata_generic ixgbe mptsas pata_acpi mdio i2c_core e1000e scsi_transport_sas dca mptscsih ata_piix ptp libata usb_storage mptbase pps_core dm_mirror dm_region_hash dm_log dm_mod [last unloaded: igb]
+[  537.708320] CPU: 12 PID: 8081 Comm: insmod Tainted: GF       W  O--------------   3.10.0-123.el7.x86_64 #1
+[  537.823707] Hardware name: Emerson PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    /PCA,ATCA-7365-D/24GB/R.1.21/6E/CFG10    , BIOS 1.4.2 05/26/2011
+[  537.973390] task: ffff88032ca44fa0 ti: ffff88032cc70000 task.ti: ffff88032cc70000
+[  538.062787] RIP: 0010:[<ffffffff81304e05>]  [<ffffffff81304e05>] pci_enable_msix+0x2e5/0x3f0
+[  538.163631] RSP: 0018:ffff88032cc71b08  EFLAGS: 00010286
+[  538.227043] RAX: 0000000000000000 RBX: ffff88032ac618d8 RCX: 0000000000000000
+[  538.312281] RDX: 0000000000000000 RSI: 0000000000000246 RDI: 0000000000000246
+[  538.397522] RBP: ffff88032cc71b58 R08: 0000000000000246 R09: ffff88032c457230
+[  538.482760] R10: 0000000000000000 R11: ffff88032cc71636 R12: ffffc900148dd00c
+[  538.568000] R13: ffff8802e9e5b380 R14: 0000000000000000 R15: ffff88032e424000
+[  538.653240] FS:  00007f596ae3b740(0000) GS:ffff880333cc0000(0000) knlGS:0000000000000000
+[  538.749914] CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b
+[  538.818521] CR2: ffffc900148dd00c CR3: 00000002de87c000 CR4: 00000000000007e0
+[  538.903762] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[  538.989001] DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400
+[  539.074239] Stack:
+[  539.098153]  ffff88032e424870 ffffc90000000000 0000000814840000 00000000c0097780
+[  539.186537]  00000000f9b10adf ffff88032e424000 ffff88032ac618d8 ffff88032ac61000
+[  539.274921]  ffff88032ac61000 ffffffffa01b71c0 ffff88032cc71b80 ffffffffa01b5143
+[  539.363304] Call Trace:
+[  539.392420]  [<ffffffffa01b5143>] igb_set_intr_capability+0xb3/0x1c0 [igb]
+[  539.474547]  [<ffffffffa01b53b1>] igb_probe+0x161/0x220 [igb]
+[  539.543161]  [<ffffffff812eaf45>] local_pci_probe+0x45/0xa0
+[  539.609697]  [<ffffffff812ec335>] ? pci_match_device+0xc5/0xd0
+[  539.679352]  [<ffffffff812ec4b9>] pci_device_probe+0x139/0x150
+[  539.749006]  [<ffffffff813b6aa7>] driver_probe_device+0x87/0x390
+[  539.820739]  [<ffffffff813b6e83>] __driver_attach+0x93/0xa0
+[  539.887274]  [<ffffffff813b6df0>] ? __device_attach+0x40/0x40
+[  539.955884]  [<ffffffff813b4833>] bus_for_each_dev+0x73/0xc0
+[  540.023457]  [<ffffffff813b64fe>] driver_attach+0x1e/0x20
+[  540.087909]  [<ffffffff813b6050>] bus_add_driver+0x200/0x2d0
+[  540.155478]  [<ffffffff813b7504>] driver_register+0x64/0xf0
+[  540.222009]  [<ffffffff812ec1a5>] __pci_register_driver+0xa5/0xc0
+[  540.294783]  [<ffffffffa01b5550>] ? igb_remove+0x80/0x80 [igb]
+[  540.364436]  [<ffffffffa01b5582>] igb_init+0x32/0x50 [igb]
+[  540.429927]  [<ffffffff810020e2>] do_one_initcall+0xe2/0x190
+[  540.497503]  [<ffffffff810ca7fb>] load_module+0x129b/0x1a90
+[  540.564038]  [<ffffffff812da590>] ? ddebug_proc_write+0xf0/0xf0
+[  540.634727]  [<ffffffff810c7133>] ? copy_module_from_fd.isra.43+0x53/0x150
+[  540.716855]  [<ffffffff810cb1a6>] SyS_finit_module+0xa6/0xd0
+[  540.784429]  [<ffffffff815f2119>] system_call_fastpath+0x16/0x1b
+[  540.856154] Code: 4d 0c 4c 89 ee 48 8d 04 c3 89 55 c4 44 0f b7 60 04 89 08 41 8b 7d 0c 41 c1 e4 04 41 83 c4 0c e8 92 55 df ff 4d 63 e4 4d 03 65 28 <41> 8b 04 24 be 01 00 00 00 41 89 45 08 4c 89 ef e8 76 19 d1 ff 
+[  541.082139] RIP  [<ffffffff81304e05>] pci_enable_msix+0x2e5/0x3f0
+[  541.154910]  RSP <ffff88032cc71b08>
+[  541.196496] CR2: ffffc900148dd00c
