@@ -37,7 +37,7 @@ int igb_set_intr_capability(struct net_device *netdev)
 			num_vectors);
 	if (err == 0){
 		adapter->flag |= FLG_MSIX_ENABLED;
-		for (i = 0; i < adapter->num_vectors; i++)
+		for (i = 0; i < num_vectors; i++)
 			printk(KERN_INFO"irq vector = %d\n", adapter->msix_entries[i].vector);
 		return 0;
 	}

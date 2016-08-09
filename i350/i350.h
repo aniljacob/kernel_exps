@@ -28,6 +28,9 @@ struct i350_dev{
 	
 	/*interrupt related structures*/
 	int num_vectors;
+	int num_txq;
+	int num_rxq;
+
 	struct msix_entry msix_entries[MAX_MSIX_ENTRIES];
 	/*hardware information*/
 	struct e1000_hw hw;
