@@ -3,7 +3,25 @@
 #include <linux/i2c.h>
 #include <linux/rtc.h>
 #include <linux/bcd.h>
+#include <linux/fs.h>
+#include <linux/miscdevice.h>
+#include <linux/slab.h>
+
 #include "stm41t65.h"
+
+#define WDT_TIMEOUT_DEFAULT 1
+#define WDT_RESOLUTION_DEFAULT 0x02
+
+int wdog_timeout = WDT_TIMEOUT_DEFAULT;
+module_param(wdog_timeout, int, S_IRUGO);
+MODULE_PARM_DESC(wdog_timeout, "Watchdog timeout period, default 1");
+
+int wdog_resolution = WDT_RESOLUTION_DEFAULT;
+module_param(wdog_resolution, int, S_IRUGO);
+MODULE_PARM_DESC(wdog_resolution, "Watchdog timeout resolution, default 1 s");
+
+/*this is needed for watchdog*/
+struct i2c_client *gclient = NULL;
 
 /*
  * This is my dts for i2c controller
@@ -42,7 +60,7 @@
 
  * this id table recoganizes the device. Once the driver 
  * registers, immediately probe will get invoked if it is
- * matching with the dts
+ * matching with the dts entry
  * */
 
 static const struct i2c_device_id m41t65_idtable[] = {
@@ -51,6 +69,9 @@ static const struct i2c_device_id m41t65_idtable[] = {
 };
 
 MODULE_DEVICE_TABLE(i2c, m41t65_idtable);
+
+static DEFINE_MUTEX(m41t65_rtc_mutex);
+static volatile unsigned long m41t65_is_open;
 
 static int m41t65_get_datetime(struct i2c_client *client,
 		struct rtc_time *tm)
@@ -194,6 +215,145 @@ static struct rtc_class_ops m41t65_rtc_ops = {
 	//.proc = m41t65_rtc_proc,
 };
 
+/*lets make this one time opening and seek disabled*/
+int wdt_open (struct inode *inode, struct file *file)
+{
+	printk(KERN_INFO"<Anil> in %s\n", __func__);
+	if (MINOR(inode->i_rdev) == WATCHDOG_MINOR){
+		mutex_lock(&m41t65_rtc_mutex);
+		if(test_and_set_bit(0, &m41t65_is_open)){
+			printk(KERN_INFO"Device busy\n");
+			mutex_unlock(&m41t65_rtc_mutex);
+			return -EBUSY;
+		}
+
+		m41t65_is_open = 1;
+		mutex_unlock(&m41t65_rtc_mutex);
+		return nonseekable_open(inode, file);
+	}
+
+	return -ENODEV;
+}
+
+ssize_t wdt_read (struct file *file, char __user *rd_buf, size_t sz, loff_t *offset)
+{
+	printk(KERN_INFO"<Anil> in %s\n", __func__);
+
+	return 0;
+}
+
+static int wdt_ping(void)
+{
+	u8 msg_buf[2] = {0};
+	struct i2c_msg msg_ping_rd[2] = {
+		{
+			.addr = gclient->addr,
+			.flags = 0, 
+			.len = 1,
+			.buf = msg_buf,
+		},
+		{
+			.addr = gclient->addr,
+			.flags = I2C_M_RD, 
+			.len = 1,
+			.buf = msg_buf,
+		}
+	};
+
+	struct i2c_msg msg_ping_wr[1] = {
+		{
+			.addr = gclient->addr,
+			.flags = 0, 
+			.len = 2,
+			.buf = msg_buf,
+		}
+	};
+
+	msg_buf[0] = M41T65_REG_WDOG;
+	if (i2c_transfer(gclient->adapter, msg_ping_rd, 2) < 0){
+		dev_err(&gclient->dev, "read error\n");
+		return -EIO;
+	}
+
+	printk(KERN_INFO"Current watchdog value is 0x%02x\n", msg_buf[1]);
+	msg_buf[0] = M41T65_REG_WDOG;
+	msg_buf[1] |= (((wdog_resolution << 4)| wdog_resolution) & M41T65_WDOG_MUL_MASK);
+	msg_buf[1] |= ((wdog_timeout << 1) & M41T65_WDOG_RES_MASK);
+
+	printk(KERN_INFO"wdog reg = 0x%02x\n", msg_buf[0]);
+	if (i2c_transfer(gclient->adapter, msg_ping_wr, 1) < 0){
+		dev_err(&gclient->dev, "read error\n");
+		return -EIO;
+	}
+
+	return 0;
+}
+
+ssize_t wdt_write (struct file *file, const char __user *wr_buf, size_t sz, loff_t *offset)
+{
+	u8 *buf = (u8*)kzalloc(sz, GFP_KERNEL);
+
+	if (!buf){
+		return -ENOMEM;
+	}
+	copy_from_user(buf, wr_buf, sz);
+	printk(KERN_INFO"<Anil> in %s, userdata = %s\n", __func__, buf);
+
+	if (sz){
+		wdt_ping();
+		return sz;
+	}
+	kfree(buf);
+
+	//interesting!!!
+	//if you return 0, echo 1 > /dev/m41t65wdt will keep on writing as echo will try to write till it 
+	//is finished with data echo 1234 will loop 4 times if it is returning 1, EPERM is an error, so 
+	//echo will stop trying after 1 try
+	//return 0;
+	
+	return -EPERM; 
+}
+
+long wdt_ioctl (struct file *file, unsigned int ioctl_req, unsigned long arg)
+{
+	printk(KERN_INFO"<Anil> in %s\n", __func__);
+
+	return 0;
+}
+
+int wdt_mmap (struct file *file, struct vm_area_struct *vm_area)
+{
+	printk(KERN_INFO"<Anil> in %s\n", __func__);
+
+	return 0;
+}
+
+int wdt_release (struct inode *inode, struct file *file)
+{
+	printk(KERN_INFO"<Anil> in %s\n", __func__);
+
+	if (MINOR(inode->i_rdev) == WATCHDOG_MINOR)
+		clear_bit(0, &m41t65_is_open);
+
+	return 0;
+}
+
+static const struct file_operations m41t65_fops = {
+	.owner = THIS_MODULE,
+	.open = wdt_open,
+	.read = wdt_read,
+	.write = wdt_write,
+	.mmap = wdt_mmap,
+	.unlocked_ioctl = wdt_ioctl,
+	.release = wdt_release,
+};
+
+static struct miscdevice m41t65wdt = {
+	.minor = WATCHDOG_MINOR,
+	.name = "m41t65wdt",
+	.fops = &m41t65_fops,
+};
+
 static int m41t65_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
 	struct rtc_time cur_time = {0};
@@ -216,6 +376,13 @@ static int m41t65_probe(struct i2c_client *client, const struct i2c_device_id *i
 	//if I have something more, make this into a structure and add more info.
 	i2c_set_clientdata(client, rtc);
 
+	//this will create a node with '/dev/<m41t65wdt.name> and can be used to do the file
+	//operations
+	misc_register(&m41t65wdt);
+
+	gclient = client;	
+
+	printk(KERN_INFO"watchdog timeout %s to %d\n", (wdog_timeout == WDT_TIMEOUT_DEFAULT) ? "set":"modified", wdog_timeout);
 	m41t65_get_datetime(client, &cur_time);
 
 	return 0;
@@ -229,6 +396,7 @@ static int m41t65_remove(struct i2c_client *client)
 	struct rtc_device *rtc = (struct rtc_device *)i2c_get_clientdata(client);
 
 	printk(KERN_INFO"Removing the i2c device\n");
+	misc_deregister(&m41t65wdt);
 	devm_rtc_device_unregister(&client->dev, rtc);
 
 	return 0;

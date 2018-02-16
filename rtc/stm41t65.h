@@ -11,6 +11,7 @@
 #define M41T65_REG_DAY  5
 #define M41T65_REG_MON  6
 #define M41T65_REG_YEAR 7
+#define M41T65_REG_WDOG 9
 #define M41T65_REG_ALARM_MON    0xa
 #define M41T65_REG_ALARM_DAY    0xb
 #define M41T65_REG_ALARM_HOUR   0xc
@@ -20,5 +21,8 @@
 #define M41T65_REG_SQW  0x13
 
 #define M41T65_DATETIME_REG_SIZE  (M41T65_REG_YEAR+1)
+#define M41T65_WDOG_RES_MASK 0x83
+#define M41T65_WDOG_MUL_MASK 0x7c
+
 
 #endif
